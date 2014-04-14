@@ -12,13 +12,9 @@ class ProductsController < ApplicationController
         puts @user_id
 
         if @user_id
-
             @products = User.find(@user_id).products
-
         else
-
             redirect_to new_session_path
-
         end
 
     end
@@ -40,13 +36,20 @@ class ProductsController < ApplicationController
 
         if product.save
 
-            redirect_to products_path
+            redirect_to products_by_user_path
 
         else 
-
             render :new
-
         end 
+
+    end 
+
+    def destroy
+
+        puts params
+        Product.find(params[:id]).delete
+
+        redirect_to products_by_user_path
 
     end 
 
