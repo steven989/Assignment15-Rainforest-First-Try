@@ -1,0 +1,18 @@
+<h1>Sign up for your free account now!</h1>
+
+<div class="sign_up">
+    <%= form_for @user do |f| %>
+
+        <%= f.label "email", "Email" %>
+        <p><%= f.text_field "email" %></p>
+
+        <p><%= f.label "password", "Password" %></p>
+        <%= f.text_field "password" %>
+
+        <p><%= f.label "password_confirmation", "Re-type password" %></p>
+        <%= f.text_field "password_confirmation" %>
+
+       <p> <%= f.submit "Sign up!" %></p>
+
+    <% end %>
+</div>

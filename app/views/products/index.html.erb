@@ -1,12 +1,20 @@
-<h1>Here are all the products</h1>
 
-<% @products.each do |product| %>
+<div class = "header">
+    <%= link_to "Sign up", new_user_path %>
+</div>
 
-    <div class="product">
-    <%= image_tag(product.image_url, size: "150x200") %>
-    <p><%= product.product_name %></p>
-    <p><%= product.product_description %></p>
-    <p><%= product.price/100.00 %></p>
-    </div>
+<div class = "content_body">
+    <h1>Here are all the products</h1>
 
-<% end %>
+        <% @products.each do |product| %>
+
+            <div class="product">
+            <%= image_tag(product.image_url, size: "150x200") %>
+            <p><%= product.product_name %></p>
+            <p><%= product.product_description %></p>
+            <p><%= product.price/100.00 %></p>
+            </div>
+
+    <% end %>
+
+</div>
