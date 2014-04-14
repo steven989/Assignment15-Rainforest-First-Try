@@ -2,6 +2,9 @@ RainforestAttempt1::Application.routes.draw do
 
   root :to => "products#index"
   resources :products
+
+  get 'products_by_user' => 'products#user_index'
+
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 

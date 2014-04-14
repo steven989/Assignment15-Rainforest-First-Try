@@ -3,7 +3,6 @@
     <% if @user_id %>   
         <p>Welcome <%= User.find(@user_id).email %>!</p>
         <%= link_to "Add a product", new_product_path %>
-        <%= link_to "See my products", products_by_user_path %>
         <%= link_to "Log out", session_path(@user_id), :method => "delete" %>
     <% else %>
         <%= link_to "Sign up", new_user_path %>

@@ -1,0 +1,27 @@
+<h1>Add a product below</h1>
+
+
+<%= form_for @product do |f| %>
+
+    <p><%= f.label 'product_name', 'Product name' %></p>
+    <p><%= f.text_field 'product_name' %></p>
+
+    <p><%= f.label 'product_description', "Product description" %></p>
+    <p><%= f.text_area 'product_description' %></p>
+
+    <p><%= f.label 'category', "Product category" %></p>
+    <p><%= f.text_field 'category' %></p>
+
+    <p><%= f.label 'price', "Unit price" %></p>
+    <p><%= f.text_field 'price' %></p>
+
+    <p><%= f.label 'image_url', "Link to a photo" %></p>
+    <p><%= f.text_field 'image_url' %></p>
+
+    <p><%= f.hidden_field 'user_id', value: @user_id %></p>
+
+    <p><%= f.submit "Add a product" %></p>
+
+<% end %>
+
+<%= link_to "Back", products_path %>
