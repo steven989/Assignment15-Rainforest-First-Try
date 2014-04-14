@@ -1,0 +1,15 @@
+<h1>Log in to your account now</h1>
+
+<div class="sign_up">
+    <%= form_tag (sessions_path) do %>
+
+        <%= label_tag("email", "Email") %>
+        <p><%= text_field_tag("email") %></p>
+
+        <p><%= label_tag "password", "Password" %></p>
+        <%= text_field_tag("password") %>
+
+       <p> <%= submit_tag "Log in" %></p>
+
+    <% end %>
+</div>

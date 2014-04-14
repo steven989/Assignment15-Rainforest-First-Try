@@ -1,6 +1,13 @@
 
 <div class = "header">
-    <%= link_to "Sign up", new_user_path %>
+    <% if @user_id %>   
+        <p>Welcome <%= User.find(@user_id).email %>!</p>
+        <%= link_to "Log out", session_path(@user_id), :method => "delete" %>
+    <% else %>
+        <%= link_to "Sign up", new_user_path %>
+        <p> or </p>
+        <%= link_to "Login", new_session_path %>
+    <% end %>
 </div>
 
 <div class = "content_body">
