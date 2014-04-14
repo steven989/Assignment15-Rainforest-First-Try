@@ -12,6 +12,8 @@ class SessionsController < ApplicationController
 
             session[:authenticated_id] = user.id
             
+            session[:last_login_time] = Time.now
+
             redirect_to products_path
         
         else 
